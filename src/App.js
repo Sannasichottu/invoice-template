@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 import ClientDetails from "./components/ClientDetails";
 import Dates from "./components/Dates";
@@ -8,6 +8,7 @@ import MainDetails from "./components/MainDetails";
 import Notes from "./components/Notes";
 import Table from "./components/Table";
 import TableForm from "./components/TableForm";
+import ReactToPrint from "react-to-print";
 
 function App() {
   const [showInvoice, setShowInvoice] = useState(true);
@@ -28,16 +29,24 @@ function App() {
   const [quantity, setQuantity] = useState("");
   const [price, setPrice] = useState("");
   const [amount, setAmount] = useState("");
-  const [list,setList] = useState([])
+  const [list, setList] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  const componentRef = useRef()
 
   const handlePrint = () => {
     window.print();
   };
   return (
     <>
+
       <main className="m-5 p-5 md:max-w-xl md:mx-auto lg:max-w-2xl xl:max-w-4xl bg-white rounded shadow">
         {showInvoice ? (
-          <div>
+          <>
+          <ReactToPrint trigger={() => <button className="bg-blue-500 ml-5 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300">Print / Download</button>} 
+            content={() => componentRef.current}
+          />
+           <div ref={componentRef} className="p-5">
             <Header handlePrint={handlePrint} />
             <MainDetails name={name} address={address} />
             <ClientDetails
@@ -55,7 +64,9 @@ function App() {
               price={price}
               amount={amount}
               list={list}
-              setList = {setList}
+              setList={setList}
+              total={total}
+              setTotal={setTotal}
             />
 
             <Notes notes={notes} />
@@ -68,13 +79,14 @@ function App() {
               bankAccount={bankAccount}
               bankName={bankName}
             />
+          </div>
             <button
               onClick={() => setShowInvoice(false)}
               className="mt-5 bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
             >
               Edit Information
             </button>
-          </div>
+         </>
         ) : (
           <>
             {/* name, address, email, phone, bank name, back account name, website, client name, client address, invoice number, invoice date, due date, notes */}
@@ -249,8 +261,10 @@ function App() {
                 setPrice={setPrice}
                 amount={amount}
                 setAmount={setAmount}
-                list = {list}
-                setList = {setList}
+                list={list}
+                setList={setList}
+                total={total}
+                setTotal={setTotal}
               />
 
               <label htmlFor="notes">Additional Notes</label>
