@@ -5,8 +5,8 @@ export default function MainDetails( {name, address}) {
     <>
         <section className="flex flex-col items-end justify-end">
         {/* <input type="text" name="text" id="text" placeholder="Enter Your Name" required/> */}
-          <h2 className="fond-bold text-xl uppercase mb-1 md:text-4xl">{name}</h2>
-          <p>{address}</p>
+          <h2 id='mainName' className="fond-bold text-xl uppercase mb-1 md:text-4xl">{name}</h2>
+          <p id='clientAddress'>{address}</p>
         </section>
     </>
   )

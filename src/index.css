@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +13,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  
 }
 
 /* code {
@@ -15,19 +25,31 @@ body {
 label {
   margin-bottom: 0.3rem;
   font-size: 1.05rem;
-  font-weight: 700;
-  color: #383838;
+  color: #3DA35D;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Signika Negative', sans-serif;
+  font-weight: 600;
+  
   
 }
 
 input,
 textarea {
-  background-color: #f1f1f1;
+  background-color: #E8FCCF;
   padding: 0.5rem;
   border-radius: 0.2rem;
   margin-bottom: 1.5rem;
-  color: #616161;
+  color: #112A46;
   font-weight: 600;
+  border: 1px solid #134611;
+}
+
+input:hover,
+textarea:hover {
+ border: 2px dashed #112A46;
+  background-color: #E8FCCF;
+ 
+  
 }
 
 button {
@@ -36,4 +58,79 @@ button {
 
 .footer li {
   margin: 0.5rem 0.2rem;
+}
+
+#total,#total1,#total2 {
+  color: #134611;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+
+.tableHead {
+  background-color: #134611;
+  font-weight: 300;
+  padding: 2rem;
+  text-align: center;
+  color: #96E072;
+  border: 1px dashed #ff49bd;
+  padding-bottom: 2rem ;  
+  font-family: 'EB Garamond', serif;
+}
+.tableBody {
+  color:#3E8914;
+  font-size: 20px;
+  text-align: center;
+};
+
+
+#button {
+  background-color: #E58F65;
+  color: red;
+}
+/* .formTotal {
+  margin-left: 20rem;
+} */
+
+#headInvoice {
+  color: #134611;
+  font-family: 'EB Garamond', serif;
+}
+
+#mainName {
+  color:  #134611;
+  font-family: 'Creepster';
+}
+
+#invoiceDetail {
+  font-family: 'Outfit', sans-serif;
+ color: #346D2A;
+}
+#clientName {
+  color: #346D2A;
+  font-family: 'Agbalumo';
+}
+#clientAddress {
+  color: #3E8914;
+  font-family: 'Courgette', cursive;
+}
+#notes,.footer {
+  color: #4c5c4c;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#footerTitle {
+  color: #134611;
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  font-weight: 900;
+ 
+}
+
+.footer {
+  color: #758275;
+  font-family: 'Patrick Hand', cursive;
+  
 }

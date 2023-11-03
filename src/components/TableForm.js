@@ -86,7 +86,7 @@ export default function TableForm({
 
       <form onSubmit={handleSubmit}>
       <div className="flex flex-col md:mt-16">
-        <label htmlFor="description">Item description</label>
+        <label htmlFor="description" className="mb-3">Item description</label>
         <input
           type="text"
           name="description"
@@ -98,7 +98,7 @@ export default function TableForm({
       </div>
       <div className="md:grid grid-cols-3 gap-10">
         <div className="flex flex-col">
-          <label htmlFor="quantity">Quantity</label>
+          <label htmlFor="quantity" className="mb-3">Quantity</label>
           <input
             type="text"
             name="quantity"
@@ -109,7 +109,7 @@ export default function TableForm({
           ></input>
         </div>
         <div className="flex flex-col">
-          <label htmlFor="price">Price</label>
+          <label htmlFor="price" className="mb-3">Price</label>
           <input
             type="text"
             name="price"
@@ -120,36 +120,39 @@ export default function TableForm({
           ></input>
         </div>
         <div className="flex flex-col">
-          <label htmlFor="amount">Amount</label>
-          <p>{amount} </p>
+          <label htmlFor="amount" className="mb-3">Amount</label>
+          <p id='total'>{amount} </p>
         </div>
 
       </div>
-      <button type="submit" className="mb-5 bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300" >
+      <button type="submit" className="button mb-5 bg-green-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-green-500 hover:bg-transparent hover:text-green-500 transition-all duration-300" >
         {isEditing ? "Editing Row Item" : "Add Table Item"}
       </button>
       </form>
       {/* Table Items */}
-      <table width="100%" className="mb-10">
-      <thead>
-           <tr className='bg-gray-300 p=1'>
-            <td className='font-bold'>Description</td>
+      <table width="100%" className="mb-10 ">
+      <thead className="mb-50 ">
+           <tr className=' tableHead '>
+            <td className=' py-2 font-bold'>Description</td>
             <td className='font-bold'>Quantity</td>
             <td className='font-bold'>Price</td>
-            <td className='font-bold'>Amount</td>
+            <td className='font-bold' >Delete</td>
+            <td className='font-bold' >Edit</td>
+            <td className='font-bold' >Amount</td>
            </tr>
           </thead>
         {list.map(({id, description, quantity, price, amount}) => (
           <React.Fragment key={id}>
             
-          <tbody>
-            <tr>
-              <td>{description}</td>
+          <tbody className="tableBody ">
+            <tr className="tableRow">
+              <td className="py-2">{description}</td>
               <td>{quantity}</td>
               <td>{price}</td>
-              <td className="amount">{amount}</td>
               <td><button onClick={() => deleteRow(id)}><AiOutlineDelete className="text-red-500 font-bold text-xl"/></button></td>
               <td><button onClick={() => editRow(id)}><AiOutlineEdit className="text-green-500 font-bold text-xl"/></button></td>
+              <td className="amount" id='total'>{amount}</td>
+              
             </tr>
           </tbody>
         
@@ -157,7 +160,7 @@ export default function TableForm({
         ))}
         </table>
         <div>
-          <h2 className="flex items-end justify-end text-gray-800 text-4xl font-bold">₹ {total.toLocaleString()}</h2>
+          <h2 className=" flex items-end justify-end text-4xl font-bold" id='total1'>₹ {total.toLocaleString()}</h2>
         </div>
     </>
   );

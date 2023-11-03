@@ -12,20 +12,20 @@ import ReactToPrint from "react-to-print";
 
 function App() {
   const [showInvoice, setShowInvoice] = useState(true);
-  const [name, setName] = useState("tamilInfo");
-  const [address, setAddress] = useState("Dindigul, TamilNadu");
+  const [name, setName] = useState("Tamil");
+  const [address, setAddress] = useState("Dindigul,TamilNadu");
   const [email, setEmail] = useState("tit@gmail.com");
-  const [phone, setPhone] = useState("7894556123");
-  const [bankName, setBankName] = useState("Bank of baroda");
-  const [bankAccount, setBankAccount] = useState("1234567894512");
-  const [website, setWebsite] = useState("https://www.tit@gmail.com");
+  const [phone, setPhone] = useState("7894561230");
+  const [bankName, setBankName] = useState("BankOfBaroda");
+  const [bankAccount, setBankAccount] = useState("789456123012345");
+  const [website, setWebsite] = useState("https://www.tit.com.in");
   const [clientName, setClientName] = useState("sannasi");
-  const [clientAddress, setClientAddress] = useState("kovilpatti, TamilNadu");
-  const [invoiceNumber, setInvoiceNumber] = useState("1201");
-  const [invoiceDate, setInvoiceDate] = useState("30-10-2023");
-  const [dueDate, setDueDate] = useState("30-11-2023");
-  const [notes, setNotes] = useState("Pay to the bank account");
-  const [description, setDescription] = useState("");
+  const [clientAddress, setClientAddress] = useState("Kovilpatti,TamilNadu");
+  const [invoiceNumber, setInvoiceNumber] = useState("1202");
+  const [invoiceDate, setInvoiceDate] = useState("03-11-2023");
+  const [dueDate, setDueDate] = useState("03-12-2023");
+  const [notes, setNotes] = useState("This is Notes");
+  const [description, setDescription] = useState(" ");
   const [quantity, setQuantity] = useState("");
   const [price, setPrice] = useState("");
   const [amount, setAmount] = useState("");
@@ -40,10 +40,10 @@ function App() {
   return (
     <>
 
-      <main className="m-5 p-5 md:max-w-xl md:mx-auto lg:max-w-2xl xl:max-w-4xl bg-white rounded shadow">
+      <main className="m-5 p-5 md:max-w-xl md:mx-auto lg:max-w-2xl xl:max-w-4xl rounded shadow" id="main">
         {showInvoice ? (
           <>
-          <ReactToPrint trigger={() => <button className="bg-blue-500 ml-5 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300">Print / Download</button>} 
+          <ReactToPrint trigger={() => <button className="bg-green-500 ml-5 text-white font-bold py-2 px-8 rounded shadow border-2 border-green-500 hover:bg-transparent hover:text-green-500 transition-all duration-300">Print / Download</button>} 
             content={() => componentRef.current}
           />
            <div ref={componentRef} className="p-5">
@@ -82,7 +82,7 @@ function App() {
           </div>
             <button
               onClick={() => setShowInvoice(false)}
-              className="mt-5 bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
+              className="mt-5 bg-green-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-green-500 hover:bg-transparent hover:text-green-500 transition-all duration-300"
             >
               Edit Information
             </button>
@@ -91,9 +91,9 @@ function App() {
           <>
             {/* name, address, email, phone, bank name, back account name, website, client name, client address, invoice number, invoice date, due date, notes */}
             <div className="flex flex-col justify-center">
-              <article className="md:grid grid-cols-2 gap-10">
+              <article className="md:grid grid-cols-2 gap-10 ">
                 <div className="flex flex-col">
-                  <label htmlFor="name">Your Full Name</label>
+                  <label htmlFor="name" className="mb-3">Your Full Name</label>
                   <input
                     type="text"
                     name="text"
@@ -105,7 +105,7 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="address">Enter your Address</label>
+                  <label htmlFor="address" className="mb-3">Enter your Address</label>
                   <input
                     type="text"
                     name="address"
@@ -119,7 +119,7 @@ function App() {
               </article>
               <article className="md:grid grid-cols-3 gap-10">
                 <div className="flex flex-col">
-                  <label htmlFor="email">Enter your Email</label>
+                  <label htmlFor="email" className="mb-3">Enter your Email</label>
                   <input
                     type="email"
                     name="email"
@@ -131,7 +131,7 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="website">Enter your Website</label>
+                  <label htmlFor="website" className="mb-3">Enter your Website</label>
                   <input
                     type="url"
                     name="website"
@@ -143,7 +143,7 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="phone">Enter your Phone</label>
+                  <label htmlFor="phone" className="mb-3">Enter your Phone</label>
                   <input
                     type="text"
                     name="phone"
@@ -157,7 +157,7 @@ function App() {
               </article>
               <article className="md:grid grid-cols-2 gap-10">
                 <div className="flex flex-col">
-                  <label htmlFor="bankName">Enter your Bank name</label>
+                  <label htmlFor="bankName" className="mb-3">Enter your Bank name</label>
                   <input
                     type="text"
                     name="bankName"
@@ -169,7 +169,7 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="bankAccount">
+                  <label htmlFor="bankAccount" className="mb-3">
                     Enter your Bank account number
                   </label>
                   <input
@@ -185,7 +185,7 @@ function App() {
               </article>
               <article className="md:grid grid-cols-2 gap-10 md:mt-16">
                 <div className="flex flex-col">
-                  <label htmlFor="clientName">Enter your client's name</label>
+                  <label htmlFor="clientName" className="mb-3">Enter your client's name</label>
                   <input
                     type="text"
                     name="clientName"
@@ -197,7 +197,7 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="clientAddress">
+                  <label htmlFor="clientAddress" className="mb-3">
                     Enter your client's address
                   </label>
                   <input
@@ -213,7 +213,7 @@ function App() {
               </article>
               <article className="md:grid grid-cols-3 gap-10">
                 <div className="flex flex-col">
-                  <label htmlFor="invoiceNumber">Invoice Number</label>
+                  <label htmlFor="invoiceNumber" className="mb-3">Invoice Number</label>
                   <input
                     type="number"
                     name="invoiceNumber"
@@ -225,7 +225,7 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="invoiceDate">Invoice Date</label>
+                  <label htmlFor="invoiceDate" className="mb-3">Invoice Date</label>
                   <input
                     type="date"
                     name="invoiceDate"
@@ -237,7 +237,7 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="dueDate">due Date</label>
+                  <label htmlFor="dueDate" className="mb-3">due Date</label>
                   <input
                     type="date"
                     name="dueDate"
@@ -267,7 +267,7 @@ function App() {
                 setTotal={setTotal}
               />
 
-              <label htmlFor="notes">Additional Notes</label>
+              <label htmlFor="notes" className="mb-3">Additional Notes</label>
               <textarea
                 name="notes"
                 id="notes"
@@ -280,8 +280,8 @@ function App() {
                 {" "}
               </textarea>
               <button
-                onClick={() => setShowInvoice(true)}
-                className="bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
+                onClick={() => setShowInvoice(true)}  
+                className="bg-green-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-green-500 hover:bg-transparent hover:text-green-500 transition-all duration-300"
               >
                 Preview Invoice
               </button>
